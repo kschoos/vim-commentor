@@ -21,9 +21,9 @@ pythonend
 let g:CommenterLoaded = 1
 
 function! g:CreateGrowingComment()
-  echo "Lalala"
+  python3 commenter.CreateGrowingComment()
 endfunction
 
 " Keybindings
 """""""""""""""""""""""""""""""""""""""
-imap <Leader>c call g:CreateGrowingComment()
+nnoremap <Leader>c :call g:CreateGrowingComment()<CR>
