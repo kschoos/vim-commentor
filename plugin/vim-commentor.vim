@@ -15,15 +15,20 @@ end
 python3 << pythonend
 import sys, vim
 sys.path.append(vim.eval("expand('<sfile>:p:h')") + '/libs/')
-import commenter
+import growing_comment, growing_block
 pythonend
 
 let g:CommenterLoaded = 1
 
 function! g:CreateGrowingComment()
-  python3 commenter.CreateGrowingComment()
+  python3 growing_comment.CreateGrowingComment()
+endfunction
+
+function! g:CreateGrowingCommentBlock()
+  python3 growing_block.CreateGrowingCommentBlock()
 endfunction
 
 " Keybindings
 """""""""""""""""""""""""""""""""""""""
 nnoremap <Leader>c :call g:CreateGrowingComment()<CR>
+nnoremap <Leader>q :call g:CreateGrowingCommentBlock()<CR>
